@@ -43,7 +43,7 @@ const RollDice = ({ curretDice, rollDice, setTotalScore }) => {
       <div className="dice">
         <img
           onClick={rollDice}
-          src={`./../../public/images/dice_${curretDice}.png`}
+          src={`/images/dice_${curretDice}.png`}
           alt=""
         />
       </div>
