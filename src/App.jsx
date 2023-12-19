@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import StartGame from "./components/StartGame";
 import GamePlay from "./components/GamePlay";
 
