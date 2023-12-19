@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Img1 from "./../assets/dice_1.png";
+import Img2 from "./../assets/dice_2.png";
+import Img3 from "./../assets/dice_3.png";
+import Img4 from "./../assets/dice_4.png";
+import Img5 from "./../assets/dice_5.png";
+import Img6 from "./../assets/dice_6.png";
 
 const RollDiceContainer = styled.div`
   max-width: 250px;
@@ -37,15 +43,25 @@ const Button = styled.button`
   }
 `;
 
+const ImgObj = {
+  1: Img1,
+  2: Img2,
+  3: Img3,
+  4: Img4,
+  5: Img5,
+  6: Img6,
+};
+
 const RollDice = ({ curretDice, rollDice, setTotalScore }) => {
+  const [currentRollDice, setCurrentRollDice] = useState(ImgObj[curretDice]);
+  useEffect(() => {
+    setCurrentRollDice(ImgObj[curretDice]);
+  }, [curretDice]);
+  
   return (
     <RollDiceContainer>
       <div className="dice">
-        <img
-          onClick={rollDice}
-          src={`/images/dice_${curretDice}.png`}
-          alt=""
-        />
+        <img onClick={rollDice} src={currentRollDice} alt="" />
       </div>
       <p>Click On Dice To Roll</p>
       <Button onClick={() => setTotalScore(0)}>Reset Score</Button>

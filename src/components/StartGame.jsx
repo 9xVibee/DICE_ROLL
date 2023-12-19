@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import styled from "styled-components";
+import StartGameImage from "./../assets/dices1.png";
 
 const Container = styled.div`
   max-width: 1180px;
@@ -44,7 +45,7 @@ const Button = styled.button`
 const StartGame = ({ toggle }) => {
   return (
     <Container>
-      <img src="../public/images/dices1.png" alt="Dices" />
+      <img src={StartGameImage} alt="Dices" />
       <div className="content">
         <h1>DICE GAME</h1>
         <Button onClick={toggle}>Play Now</Button>
